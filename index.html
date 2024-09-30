@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz rejestracyjny</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color:burlywood; 
+            position: relative;
+        }
+        .container {
+            background-color: chocolate;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1; 
+        }
+        .side-image {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 20%; 
+            background-image: url('path_to_your_image.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="side-image left"></div>
+    <div class="container">
+        <h1>Formularz rejestracyjny</h1>
+        <form id="rejestracja">
+            <label for="name">Imię i Nazwisko:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="phone">Telefon:</label>
+            <input type="tel" id="phone" name="phone" required><br><br>
+
+            <label for="password">Hasło:</label>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <label>
+                <input type="checkbox" name="terms" required>
+                Zgoda na warunki
+            </label><br><br>
+
+            <label>Płeć:</label>
+            <label>
+                <input type="radio" name="gender" value="male" required>
+                Mężczyzna
+            </label>
+            <label>
+                <input type="radio" name="gender" value="female">
+                Kobieta
+            </label><br><br>
+
+            <label for="country">Kraj:</label>
+            <select id="country" name="country" required>
+                <option value="">Wybierz kraj</option>
+                <option value="poland">Polska</option>
+                <option value="germany">Niemcy</option>
+                <option value="france">Francja</option>
+                <option value="uk">Wielka Brytania</option>
+                <option value="usa">Stany Zjednoczone</option>
+            </select><br><br>
+
+            <button type="button" onclick="resetForm()">Resetuj</button>
+            <button type="button" onclick="submitForm()">Wyślij</button>
+        </form>
+    </div>
+</body>
+</html>
